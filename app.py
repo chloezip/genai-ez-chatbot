@@ -11,7 +11,9 @@ load_dotenv(os.getcwd() + "/openai.env")
 st.title("OpenAI Chatbot UI")
 USER_AVATAR = "👤"
 BOT_AVATAR = "🤖"
-client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
+
+api_key = os.getenv("OPENAI_API_KEY")
+client = OpenAI(api_key)
 
 # ensure OpenAI model is initiated in session state
 if "openai_model" not in st.session_state:
